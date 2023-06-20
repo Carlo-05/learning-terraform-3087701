@@ -41,6 +41,7 @@ resource "aws_instance" "blog" {
   }
 }
 
+<<<<<<< HEAD
 module "alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "~> 8.0"
@@ -51,7 +52,7 @@ module "alb" {
 
   vpc_id             = module.vpc.vpc_id
   subnets            = module.vpc.public_subnets
-  security_groups    = module.blog_sg.security_group_id
+  security_groups    = [module.blog_sg.security_group_id]
 
 
   target_groups = [
